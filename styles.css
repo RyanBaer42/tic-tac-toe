@@ -1,0 +1,60 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+  }
+
+body {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.player-section {
+    width: 25%;
+    background-image: linear-gradient(#59B9F2, #32EE62);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-area {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly
+}
+
+.player-symbol{
+    margin-bottom: 0;
+    font-size: 30px;
+    font-size: 3.5vw;
+}
+
+.player-wins {
+    color: #8E2A3F;
+    font-size: 30px;
+    font-size: 2.5vw;
+    margin-top: 2vh;
+}
+
+.turn-indicator {
+    color: #8E2A3F;
+    font-size: 30px;
+    font-size: 2.5vw;
+    margin: 0;
+}
+
+.grid-section {
+    height: 45vh;
+    width: 25vw;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 45%, rgba(0,212,255,1) 100%);
+}
+
