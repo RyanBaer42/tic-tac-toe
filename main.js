@@ -15,8 +15,8 @@ function chooseBox(event){
         if (event.target.id === gameBoxes[i].id && gameBoxes[i].innerText === ''){
             displayToken(gameBoxes[i])
             newGame.chooseBlock(gameBoxes[i].id)
+            displayCurrentTurn()
             checkForWinner()
-            newGame.changeTurns()
         }
     }
 }
@@ -28,5 +28,12 @@ function displayToken(selectedBox){
 function checkForWinner(){
     if (newGame.checkForWinner()){
         turnIndicator.innerText = `${newGame.currentPlayer.token} has won!`
+    }
+}
+
+function displayCurrentTurn(){
+    if (!newGame.checkForWinner()){
+        newGame.changeTurns();
+        turnIndicator.innerText = `It's ${newGame.currentPlayer.token}'s turn!`;
     }
 }
