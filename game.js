@@ -26,12 +26,10 @@ class Game {
         };
     }
     chooseBlock(chosenBlock){
-        if (this.currentPlayer === this.player1 && this.gameData[chosenBlock] === 0){
+        if (this.currentPlayer === this.player1){
             this.gameData[chosenBlock] = this.player1.id
-            this.checkForWinner()
-        } else if (this.currentPlayer === this.player2 && this.gameData[chosenBlock] === 0){
+        } else if (this.currentPlayer === this.player2){
             this.gameData[chosenBlock] = this.player2.id
-            this.checkForWinner()
         } 
     }
     changeTurns(){
