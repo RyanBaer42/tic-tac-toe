@@ -13,12 +13,20 @@ gameBoard.addEventListener('click', function(event){
 function chooseBox(event){
     for(var i = 0; i < gameBoxes.length; i++){
         if (event.target.id === gameBoxes[i].id && gameBoxes[i].innerText === ''){
-            newGame.trackTurns(gameBoxes[i].id)
             displayToken(gameBoxes[i])
+            newGame.chooseBlock(gameBoxes[i].id)
+            checkForWinner()
+            newGame.changeTurns()
         }
     }
 }
 
 function displayToken(selectedBox){
     selectedBox.innerText = newGame.currentPlayer.token
+}
+
+function checkForWinner(){
+    if (newGame.checkForWinner()){
+        turnIndicator.innerText = `${newGame.currentPlayer.token} has won!`
+    }
 }
