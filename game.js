@@ -45,8 +45,8 @@ class Game {
             if (this.gameData[this.winningCombinations[i][0]] === this.currentPlayer.id && 
                 this.gameData[this.winningCombinations[i][1]] === this.currentPlayer.id && 
                 this.gameData[this.winningCombinations[i][2]] === this.currentPlayer.id){
-                this.currentPlayer.increaseWins()
-                return true
+                    this.currentPlayer.increaseWins()
+                    return true
             }
         }
     }
