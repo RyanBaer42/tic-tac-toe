@@ -11,26 +11,26 @@
     </head>
     <body>
         <section class="player-section">
-            <h1 class="player-symbol player-one-symbol">⭐</h1>
-            <h1 class="player-wins player-one-wins">0 Wins</h1>
+            <h1 class="player-one-symbol" id="player-one">⭐</h1>
+            <h1 class="player-one-wins" id="player1-wins">0 Wins</h1>
         </section>
         <main class="game-area">
-            <h1 class="turn-indicator">Its someones turn!</h1>
-            <section class="grid-section">
-                <button class="grid-block grid-1">
-                <button class="grid-block grid-2">
-                <button class="grid-block grid-3">
-                <button class="grid-block grid-4">
-                <button class="grid-block grid-5">
-                <button class="grid-block grid-6">
-                <button class="grid-block grid-7">
-                <button class="grid-block grid-8">
-                <button class="grid-block grid-9">
+            <h1 class="turn-indicator">Its ⭐'s turn!</h1>
+            <section class="game-area" id="game-board">
+                <button class="grid-block" id="topLeft">
+                <button class="grid-block" id="topMiddle">
+                <button class="grid-block" id="topRight">
+                <button class="grid-block" id="middleLeft">
+                <button class="grid-block" id="middleMiddle">
+                <button class="grid-block" id="middleRight">
+                <button class="grid-block" id="bottomLeft">
+                <button class="grid-block" id="bottomMiddle">
+                <button class="grid-block" id="bottomRight">
             </section>
         </main>
         <section class="player-section">
-            <h1 class="player-symbol player-two-symbol">❤️</h1>
-            <h1 class="player-wins player-two-wins">0 Wins</h1>
+            <h1 class="player-two-symbol" id="player-two">❤️</h1>
+            <h1 class="player-two-wins" id="player2-wins">0 Wins</h1>
         </section>
     </body>
     <script type="text/javascript" src="game.js"></script>

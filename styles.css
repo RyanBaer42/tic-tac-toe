@@ -23,7 +23,7 @@ body {
     align-items: center;
 }
 
-.game-area {
+.game-section {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -31,13 +31,13 @@ body {
     justify-content: space-evenly
 }
 
-.player-symbol{
+.player-one-symbol, .player-two-symbol{
     margin-bottom: 0;
     font-size: 30px;
     font-size: 3.5vw;
 }
 
-.player-wins {
+.player-one-wins, .player-two-wins {
     color: #8E2A3F;
     font-size: 30px;
     font-size: 2.5vw;
@@ -64,7 +64,7 @@ body {
 
 .grid-block {
     border: 1px solid white;
-    height: 31%;
-    width: 31%;
+    height: 32%;
+    width: 32%;
     background-color: white;
 }
