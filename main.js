@@ -1,16 +1,39 @@
 var newGame = new Game()
 
-newGame.trackTurns("topRight")
+var gameBoard = document.getElementById("game-board")
+var gameBoxes = document.querySelectorAll(".grid-block")
+var player1Wins = document.getElementById("player1-wins")
+var player2Wins = document.getElementById("player2-wins")
+var turnIndicator= document.querySelector(".turn-indicator")
 
-newGame.trackTurns("bottomLeft")
+gameBoard.addEventListener('click', function(event){
+    chooseBox(event)
+})
 
-newGame.trackTurns("middleMiddle")
+function chooseBox(event){
+    for(var i = 0; i < gameBoxes.length; i++){
+        if (event.target.id === gameBoxes[i].id && gameBoxes[i].innerText === ''){
+            displayToken(gameBoxes[i])
+            newGame.chooseBlock(gameBoxes[i].id)
+            displayCurrentTurn()
+            checkForWinner()
+        }
+    }
+}
 
-newGame.trackTurns("bottomMiddle")
+function displayToken(selectedBox){
+    selectedBox.innerText = newGame.currentPlayer.token
+}
 
-newGame.trackTurns("middleRight")
+function checkForWinner(){
+    if (newGame.checkForWinner()){
+        turnIndicator.innerText = `${newGame.currentPlayer.token} has won!`
+    }
+}
 
-newGame.trackTurns("bottomRight")
-
-console.log(newGame.player1.wins)
-console.log(newGame.player2.wins)
+function displayCurrentTurn(){
+    if (!newGame.checkForWinner()){
+        newGame.changeTurns();
+        turnIndicator.innerText = `It's ${newGame.currentPlayer.token}'s turn!`;
+    }
+}

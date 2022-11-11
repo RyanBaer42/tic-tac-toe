@@ -25,22 +25,28 @@ class Game {
             bottomRight: 0,
         };
     }
-    trackTurns(chosenBlock){
-        if (this.currentPlayer === this.player1 && this.gameData[chosenBlock] === 0){
+    chooseBlock(chosenBlock){
+        if (this.currentPlayer === this.player1){
             this.gameData[chosenBlock] = this.player1.id
-            this.checkForWinner()
-            this.currentPlayer = this.player2
-        } else if (this.currentPlayer === this.player2 && this.gameData[chosenBlock] === 0){
+        } else if (this.currentPlayer === this.player2){
             this.gameData[chosenBlock] = this.player2.id
-            this.checkForWinner()
-            this.currentPlayer = this.player1
         } 
     }
+    changeTurns(){
+        if (this.currentPlayer === this.player1){
+            this.currentPlayer = this.player2
+        } else if (this.currentPlayer === this.player2){
+            this.currentPlayer = this.player1;
+        }
+    }
+
     checkForWinner(){
         for (var i = 0; i < this.winningCombinations.length; i++){
-            if (this.gameData[this.winningCombinations[i][0]] === this.currentPlayer.id && this.gameData[this.winningCombinations[i][1]] === this.currentPlayer.id && this.gameData[this.winningCombinations[i][2]] === this.currentPlayer.id){
+            if (this.gameData[this.winningCombinations[i][0]] === this.currentPlayer.id && 
+                this.gameData[this.winningCombinations[i][1]] === this.currentPlayer.id && 
+                this.gameData[this.winningCombinations[i][2]] === this.currentPlayer.id){
                 this.currentPlayer.increaseWins()
-                return `${this.currentPlayer.token} has won the game!!`
+                return true
             }
         }
     }

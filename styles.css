@@ -31,13 +31,13 @@ body {
     justify-content: space-evenly
 }
 
-.player-symbol{
+.player-one-symbol, .player-two-symbol{
     margin-bottom: 0;
     font-size: 30px;
     font-size: 3.5vw;
 }
 
-.player-wins {
+.player-one-wins, .player-two-wins {
     color: #8E2A3F;
     font-size: 30px;
     font-size: 2.5vw;
@@ -51,8 +51,8 @@ body {
     margin: 0;
 }
 
-.grid-section {
-    height: 47vh;
+.game-box {
+    height: 48vh;
     width: 25vw;
     background: rgb(2,0,36);
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 20%, rgba(0,212,255,1) 100%);
@@ -64,7 +64,8 @@ body {
 
 .grid-block {
     border: 1px solid white;
-    height: 31%;
-    width: 31%;
+    height: 32%;
+    width: 32%;
     background-color: white;
+    font-size: x-large;
 }
