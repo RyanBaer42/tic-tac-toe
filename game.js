@@ -3,6 +3,7 @@ class Game {
         this.player1 = new Player(1, '⭐');
         this.player2 = new Player(2, '❤️');
         this.currentPlayer = this.player1;
+        this.gameWinner;
         this.winningCombinations = [
             ['topLeft', 'topMiddle', 'topRight'],
             ['middleLeft', 'middleMiddle', 'middleRight'],
@@ -45,8 +46,9 @@ class Game {
             if (this.gameData[this.winningCombinations[i][0]] === this.currentPlayer.id && 
                 this.gameData[this.winningCombinations[i][1]] === this.currentPlayer.id && 
                 this.gameData[this.winningCombinations[i][2]] === this.currentPlayer.id){
-                this.currentPlayer.increaseWins()
-                return true
+                    this.winner = this.gameData[this.winningCombinations[i][0]]
+                    this.currentPlayer.increaseWins()
+                    return true
             }
         }
     }
