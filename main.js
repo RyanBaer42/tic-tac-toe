@@ -9,7 +9,6 @@ var turnIndicator= document.querySelector(".turn-indicator")
 gameBoard.addEventListener('click', function(event){
     chooseBox(event)
 })
-addEventListener('load', displayPlayerWins)
 
 function chooseBox(event){
     for(var i = 0; i < gameBoxes.length; i++){
@@ -27,20 +26,34 @@ function displayToken(selectedBox){
 }
 
 function checkForWinner(){
-    if (newGame.checkForWinner()){
+    newGame.checkForWinner()
+    if (newGame.hasWon === true){
         turnIndicator.innerText = `${newGame.currentPlayer.token} has won!`
         displayPlayerWins()
+        setTimeout("resetGame()", 5000);
     }
 }
 
 function displayCurrentTurn(){
-    if (!newGame.checkForWinner()){
-        newGame.changeTurns();
+    if (newGame.hasWon === false){
         turnIndicator.innerText = `It's ${newGame.currentPlayer.token}'s turn!`;
-    }
+        newGame.changeTurns();
+    } 
 }
 
 function displayPlayerWins(){
     player1Wins.innerText = `${newGame.player1.wins} Wins`
     player2Wins.innerText = `${newGame.player2.wins} Wins`
+}
+
+function resetGame(){
+    for (let i = 0; i < gameBoxes.length; i++){
+        gameBoxes[i].innerText = ''
+    }
+    newGame.resetGameData()
+    displayNewGameTurn()
+}
+
+function displayNewGameTurn(){
+    turnIndicator.innerText = `It's ${newGame.currentPlayer.token}'s turn!`;
 }

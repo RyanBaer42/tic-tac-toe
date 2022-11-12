@@ -2,7 +2,10 @@ class Game {
     constructor(){
         this.player1 = new Player(1, '⭐');
         this.player2 = new Player(2, '❤️');
+        this.started = this.player1
         this.currentPlayer = this.player1;
+        this.hasWon = false;
+
         this.winningCombinations = [
             ['topLeft', 'topMiddle', 'topRight'],
             ['middleLeft', 'middleMiddle', 'middleRight'],
@@ -13,17 +16,7 @@ class Game {
             ['topLeft', 'middleMiddle', 'bottomRight'],
             ['topRight', 'middleMiddle', 'bottomLeft']
         ];
-        this.gameData = {
-            topLeft: 0,
-            topMiddle:0,
-            topRight: 0,
-            middleLeft: 0,
-            middleMiddle: 0,
-            middleRight: 0,
-            bottomLeft: 0,
-            bottomMiddle: 0,
-            bottomRight: 0,
-        };
+        this.gameData = {};
     }
     chooseBlock(chosenBlock){
         if (this.currentPlayer === this.player1){
@@ -46,8 +39,19 @@ class Game {
                 this.gameData[this.winningCombinations[i][1]] === this.currentPlayer.id && 
                 this.gameData[this.winningCombinations[i][2]] === this.currentPlayer.id){
                     this.currentPlayer.increaseWins()
-                    return true
+                    this.hasWon = true
             }
+        }
+    }
+    resetGameData(){
+        this.gameData = {}
+        this.hasWon = false
+        if (this.started === this.player1){
+            this.started = this.player2
+            this.currentPlayer = this.player2
+        } else if (this.started === this.player2){
+            this.started = this.player1
+            this.currentPlayer = this.player1
         }
     }
 }
