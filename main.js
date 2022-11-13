@@ -37,8 +37,8 @@ function checkForWinner(){
 
 function displayCurrentTurn(){
     if (newGame.hasWon === false && newGame.hasDraw === false){
-        turnIndicator.innerText = `It's ${newGame.currentPlayer.token}'s turn!`;
         newGame.changeTurns();
+        turnIndicator.innerText = `It's ${newGame.currentPlayer.token}'s turn!`;
     } 
 }
 
