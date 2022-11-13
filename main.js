@@ -16,6 +16,7 @@ function chooseBox(event){
             displayToken(gameBoxes[i])
             newGame.chooseBlock(gameBoxes[i].id)
             checkForWinner()
+            checkForDraw()
             displayCurrentTurn()
         }
     }
@@ -30,14 +31,14 @@ function checkForWinner(){
     if (newGame.hasWon === true){
         turnIndicator.innerText = `${newGame.currentPlayer.token} has won!`
         displayPlayerWins()
-        setTimeout("resetGame()", 5000);
+        setTimeout("resetGame()", 4000);
     }
 }
 
 function displayCurrentTurn(){
-    if (newGame.hasWon === false){
-        turnIndicator.innerText = `It's ${newGame.currentPlayer.token}'s turn!`;
+    if (newGame.hasWon === false && newGame.hasDraw === false){
         newGame.changeTurns();
+        turnIndicator.innerText = `It's ${newGame.currentPlayer.token}'s turn!`;
     } 
 }
 
@@ -56,4 +57,16 @@ function resetGame(){
 
 function displayNewGameTurn(){
     turnIndicator.innerText = `It's ${newGame.currentPlayer.token}'s turn!`;
+}
+
+function checkForDraw(){
+    newGame.checkForDraw()
+    if (newGame.hasDraw === true){
+        declareDraw()
+        setTimeout("resetGame()", 4000)
+    }
+}
+
+function declareDraw(){
+    turnIndicator.innerText = 'Its a draw!'
 }
