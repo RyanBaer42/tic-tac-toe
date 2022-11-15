@@ -34,9 +34,9 @@ I worked on this project over the course of 7 days. I am in my 6th week in my fi
 
 ### Wins + Challenges:
 Some challenges included: 
-- We used event delegation to run functionality on our dynamically-created HTML elements. 
-- We cleaned up bugs that were displaying the incorrect arrays on the DOM. 
+- Using class to class interaction to properly update game grids with the correct player icon. 
+- Creating attributes to detirmine if a game has ben won and swap from player to player based off of who started the game previously. 
 
 Some wins included:
-- We changed our function which generated dynamically-created HTML elements, not hard-coded.
-- We made our site nearly identical to the original comp. 
+- I wrote DRY conditionals to detimine if a player had in-fact won the game. There is little to no redundancies in my game.js file.
+- 
