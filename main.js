@@ -12,7 +12,7 @@ gameBoard.addEventListener('click', function(event){
 
 function chooseBox(event){
     for(var i = 0; i < gameBoxes.length; i++){
-        if (event.target.id === gameBoxes[i].id && gameBoxes[i].innerText === ''){
+        if (event.target.id === gameBoxes[i].id && gameBoxes[i].innerText === '' && !newGame.hasWon){
             displayToken(gameBoxes[i])
             newGame.chooseBlock(gameBoxes[i].id)
             checkForWinner()
@@ -31,7 +31,15 @@ function checkForWinner(){
     if (newGame.hasWon === true){
         turnIndicator.innerText = `${newGame.currentPlayer.token} has won!`
         displayPlayerWins()
-        setTimeout("resetGame()", 4000);
+        setTimeout("resetGame()", 3000);
+    }
+}
+
+function checkForDraw(){
+    newGame.checkForDraw()
+    if (newGame.hasDraw === true){
+        declareDraw()
+        setTimeout('resetGame()', 3000)
     }
 }
 
@@ -57,14 +65,6 @@ function resetGame(){
 
 function displayNewGameTurn(){
     turnIndicator.innerText = `It's ${newGame.currentPlayer.token}'s turn!`;
-}
-
-function checkForDraw(){
-    newGame.checkForDraw()
-    if (newGame.hasDraw === true){
-        declareDraw()
-        setTimeout("resetGame()", 4000)
-    }
 }
 
 function declareDraw(){

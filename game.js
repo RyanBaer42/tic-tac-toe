@@ -5,7 +5,8 @@ class Game {
         this.started = this.player1;
         this.currentPlayer = this.player1;
         this.hasWon = false;
-        this.hasDraw = false
+        this.hasDraw = false;
+        this.gameData = {};
         this.winningCombinations = [
             ['topLeft', 'topMiddle', 'topRight'],
             ['middleLeft', 'middleMiddle', 'middleRight'],
@@ -16,7 +17,6 @@ class Game {
             ['topLeft', 'middleMiddle', 'bottomRight'],
             ['topRight', 'middleMiddle', 'bottomLeft']
         ];
-        this.gameData = {};
     }
     chooseBlock(chosenBlock){
         if (this.currentPlayer === this.player1){
