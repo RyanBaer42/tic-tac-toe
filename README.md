@@ -7,7 +7,7 @@
   - event delegation to handle similar event listeners
 - Understand the difference between the data model and how the data is displayed on the DOM
 - Iterate through/filter DOM elements using for loops
-- Use your problem solving process to break down large problems, solve things step by step, and trust yourself to not rely on an outside “answer” to a logical challenge
+- Use my problem solving process to break down large problems, solve things step by step, and trust yourself to not rely on an outside “answer” to a logical challenge
 
 
 ### Abstract:
@@ -35,7 +35,7 @@ I worked on this project over the course of 7 days. I am in my 6th week in my fi
 ### Wins + Challenges:
 Some challenges included: 
 - Using class to class interaction to properly update game grids with the correct player icon. 
-- Creating attributes to detirmine if a game has ben won and swap from player to player based off of who started the game previously. 
+- Creating attributes to detirmine if a game has been won and swap from player to player based off of who started the game previously. 
 
 Some wins included:
 - I wrote DRY conditionals to detimine if a player had in-fact won the game. There is little to no redundancies in my game.js file.
