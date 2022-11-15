@@ -2,7 +2,7 @@
 
 
 ### Learning Goals:
-- Solidify and demonstrate your understanding of:
+- Solidify and demonstrate my understanding of:
   - DRY JavaScript
   - event delegation to handle similar event listeners
 - Understand the difference between the data model and how the data is displayed on the DOM
