@@ -11,7 +11,7 @@
 
 
 ### Abstract:
-A game as old as time. Challenge a friend to play you at tic-tac-toe to see who the ultimate TTT champion really is. Keep track of who's turn it is and how many wins each player has.
+A game as old as time. Challenge a friend to play you at tic-tac-toe to see who the ultimate TTT champion really is. Keep track of who's turn it is and how many wins each player has. After each draw or win, the game resets to have the player who didn't start the last game, start the next game. 
 
 
 ### Installation Instructions:
@@ -39,4 +39,4 @@ Some challenges included:
 
 Some wins included:
 - I wrote DRY conditionals to detimine if a player had in-fact won the game. There is little to no redundancies in my game.js file.
-- 
+- Reassigned game.js attributes that were initially purposed for only one thing to help fix bugs that occured when a game had won but players continued to click the game's spaces
