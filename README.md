@@ -39,4 +39,4 @@ Some challenges included:
 
 Some wins included:
 - I wrote DRY conditionals to detimine if a player had in-fact won the game. There is little to no redundancies in my game.js file.
-- Reassigned game.js attributes that were initially purposed for only one thing to help fix bugs that occured when a game had won but players continued to click the game's spaces
+- Reassigned game.js attributes that were initially purposed for only one thing to help fix bugs that occured when a game had been won but players continued to click the game's spaces
